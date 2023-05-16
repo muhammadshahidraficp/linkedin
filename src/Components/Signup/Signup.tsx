@@ -56,7 +56,7 @@ const Signup: React.FC = () => {
                 <img src={HeaderLogo} alt="header logo"  className={styles.signup_header_logo}/>
                 <form onSubmit={handleSignup}>
                 <div className={styles.signup__center_content}>
-                    <div className="font-sans font-bold text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl" > Make the most of your professional life</div>
+                    <div className="font-sans font-bold text-xs sm:text-base md:text-lg lg:text-3xl xl:text-3xl" > Make the most of your professional life</div>
                     <div className={styles.signup__box_content}>
                         <label className={styles.input__label} htmlFor="email-or-phone">Email or 
                         phone number</label>

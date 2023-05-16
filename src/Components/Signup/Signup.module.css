@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
+  margin-top: 25px;
 }
 
 .signup_header_logo {
