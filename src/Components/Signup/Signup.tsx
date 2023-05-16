@@ -7,8 +7,7 @@ import { RootState } from '../../store';
 import styles from "./Signup.module.css";
 import { Helmet } from "react-helmet";
 
-import HeaderLogo from "../../Assets/linkedin_header_logo.svg"; 
-import FooterLogo from "../../Assets/linkedin_footer_logo.svg"; 
+import HeaderLogo from "../../Assets/linkedin_header_logo.svg";
 import GoogleLogo from "../../Assets/google_logo.svg"; 
 
 import { useNavigate } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Signup.module.css";
+import styles from "../Components/Login/Login.module.css";
 
 interface AtomicFooterListItemProps {
     text: string;
