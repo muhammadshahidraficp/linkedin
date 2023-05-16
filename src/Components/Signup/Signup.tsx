@@ -12,6 +12,7 @@ import FooterLogo from "../../Assets/linkedin_footer_logo.svg";
 import GoogleLogo from "../../Assets/google_logo.svg"; 
 
 import { useNavigate } from 'react-router-dom';
+import AtomicFooterList from '../../Atoms/AtomicFooterList';
 
 
 
@@ -56,7 +57,7 @@ const Signup: React.FC = () => {
                 <img src={HeaderLogo} alt="header logo"  className={styles.signup_header_logo}/>
                 <form onSubmit={handleSignup}>
                 <div className={styles.signup__center_content}>
-                    <div className="" > Make the most of your professional life</div>
+                    <div className="font-bold text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl" > Make the most of your professional life</div>
                     <div className={styles.signup__box_content}>
                         <label className={styles.input__label} htmlFor="email-or-phone">Email or 
                         phone number</label>
@@ -94,7 +95,7 @@ const Signup: React.FC = () => {
                         
                         <div className={styles.main__sign_in_container}>Already on LinkedIn?&nbsp;
 
-                        <a href="https://www.linkedin.com/uas/login?" className={styles.main__sign_in_link}> Sign in</a>
+                        <a href="/login" className={styles.main__sign_in_link}> Sign in</a>
                         </div>
                     </div>
                     <p className={styles.page_help_link__text}>Looking to create a page for a 
@@ -105,32 +106,9 @@ const Signup: React.FC = () => {
                 </div>
                 </form>
             </div>   {/* End of content */}
-            {/* Footer */}
-            <footer className={styles.li__footer}>
-                <ul className={styles.li__footer_list}>
-                    <li className={styles.li__footer_list_logo}><img src={FooterLogo} 
-                     alt="footer logo"/></li>
-                    <li className={styles.li__footer_list_year}>@2023</li>
-                    <li className={styles.li__footer_list_text}>About</li>
-                    <li className={styles.li__footer_list_text}>Accssibility</li>
-                    <li className={styles.li__footer_list_text}>User Agreement</li>
-                    <li className={styles.li__footer_list_text}>Privacy Policy</li>
-                    <li className={styles.li__footer_list_text}>Cookie Policy</li>
-                    <li className={styles.li__footer_list_text}>Copyright policy</li>
-                    <li className={styles.li__footer_list_text}>Brand Policy</li>
-                    <li className={styles.li__footer_list_text}>Guest controls</li>
-                    <li className={styles.li__footer_list_text}>Community Guidelines</li>
-                    <li className={styles.li__footer_list_text}>
-                        <select>
-                            <option>Language</option>
-                            <option>English</option>
-                            <option>Hindi</option>
-                            <option>Arabic</option>
-                            <option>Malayalam</option>
-                        </select>
-                    </li>
-                </ul>
-            </footer>
+              <div className='absolute bottom-0 bg-white w-screen h-[900px]'>
+            <AtomicFooterList/>
+              </div>
         </div>
   );
 };

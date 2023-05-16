@@ -92,16 +92,14 @@ const Login: React.FC = () => {
             </div>
             <p className={styles.login__new_to_help_link__text}>
                 New to Linkedin? 
-                <a href="http://localhost:3000/signup" 
+                <a href="/signup" 
             className={styles.login__page_newto_link__link} target="_blank" 
             rel="noopener 
             noreferrer"> Join now</a></p>
         </div>
         </form>
     </div>
-    {/* <footer className={styles.login__li__footer}> */}
         <AtomicFooterList/>
-    {/* </footer> */}
 </div>);
 };
 

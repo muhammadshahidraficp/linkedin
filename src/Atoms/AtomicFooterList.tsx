@@ -10,12 +10,15 @@ const AtomicFooterList: React.FC = () => {
     const handleOptionSelect = (selectedOption: string) => {
         console.log('Selected option:', selectedOption);
       };
+    
+
 
     return (
-      <ul className={styles.login__li__footer_list}>
+      <ul className={`flex h-12 justify-center items-center `}>
         <li className={styles.login__li__footer_list_logo}>
           <img src={FooterLogo} alt="footer logo" />
         </li>
+        {/* {options.map((option) => ())} */}
         <li className={styles.login__li__footer_list_year}>@2023</li>
         <li className={styles.login__li__footer_list_text}>About</li>
         <li className={styles.login__li__footer_list_text}>Accessibility</li>
