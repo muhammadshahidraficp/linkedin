@@ -99,7 +99,9 @@ const Login: React.FC = () => {
         </div>
         </form>
     </div>
-        <AtomicFooterList/>
+    <div className='absolute bottom-0 bg-white w-screen h-[900px]'>
+            <AtomicFooterList/>
+              </div>
 </div>);
 };
 
