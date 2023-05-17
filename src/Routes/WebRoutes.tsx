@@ -6,6 +6,7 @@ import { RouteConstants } from "../Utility/RouteConstantUtility";
 import Login from "../Components/Login/Login";
 import Public from "./RouteTypes/Public";
 import Private from "./RouteTypes/Private";
+import ErrorBoundary from "../Template/ErrorBoundary";
 
 export const RouteDataProp: {[key:string]: RouteDataType} ={
     base:{
@@ -19,7 +20,7 @@ export const RouteDataProp: {[key:string]: RouteDataType} ={
 const WebRoutes = ()=>{
     
     return(
-        <>       
+        <ErrorBoundary>       
          <Routes> 
             {
                 Object.keys(RouteData).map((route_name,index)=>{
@@ -29,7 +30,7 @@ const WebRoutes = ()=>{
                 })
             }
         </Routes>
-        </>
+        </ErrorBoundary>
 
     );
 }
