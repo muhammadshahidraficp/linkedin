@@ -1,5 +1,5 @@
 import React,{ComponentType} from "react";
-import DashboardTemplate from "../../Template/DashboardTemplate";
+import DashboardTemplate from "../../Components/Template/DashboardTemplate";
 
 interface Props {
     element:ComponentType<any>;

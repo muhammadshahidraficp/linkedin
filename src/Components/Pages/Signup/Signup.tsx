@@ -1,26 +1,17 @@
-// Signup.tsx
-
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signup } from '../../authSlice';
-import { RootState } from '../../store';
+import { signup } from '../../../authSlice';
+import { RootState } from '../../../store';
 import styles from "./Signup.module.css";
 import { Helmet } from "react-helmet";
-
-import HeaderLogo from "../../Assets/linkedin_header_logo.svg";
-import GoogleLogo from "../../Assets/google_logo.svg"; 
-
+import HeaderLogo from "../../../Assets/linkedin_header_logo.svg";
+import GoogleLogo from "../../../Assets/google_logo.svg"; 
 import { useNavigate } from 'react-router-dom';
-import AtomicFooterList from '../../Atoms/AtomicFooterList';
-
-
-
 
 const Signup: React.FC = () => {
     const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state: RootState) => state.auth.loading);
-//   const error = useSelector((state: RootState) => state.auth.error);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,7 +30,7 @@ const Signup: React.FC = () => {
    
     dispatch(signup(email, password) as any).then(() => {
         // Successful signup, redirect to a different page
-        navigate('/dashboard'); // Replace '/dashboard' with the desired page URL
+        navigate('/feed'); // Replace '/dashboard' with the desired page URL
       });
   };
 
@@ -104,10 +95,7 @@ const Signup: React.FC = () => {
                     noreferrer">Get help</a></p>
                 </div>
                 </form>
-            </div>   {/* End of content */}
-              <div className='absolute bottom-0 bg-white w-screen h-[900px]'>
-            <AtomicFooterList/>
-              </div>
+            </div>
         </div>
   );
 };

@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import styles from "./Login.module.css"
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../authSlice';
-import { RootState } from '../../store';
+import { login } from '../../../authSlice';
+import { RootState } from '../../../store';
 
-import HeaderLogo from "../../Assets/linkedin_header_logo.svg"; 
-import GoogleLogo from "../../Assets/google_logo.svg"; 
-import AppleLogo from "../../Assets/apple_logo.svg";
+import HeaderLogo from "../../../Assets/linkedin_header_logo.svg"; 
+import GoogleLogo from "../../../Assets/google_logo.svg"; 
+import AppleLogo from "../../../Assets/apple_logo.svg";
 
 import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
-
-import AtomicFooterList from '../../Atoms/AtomicFooterList';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
@@ -43,7 +41,7 @@ const Login: React.FC = () => {
         </Helmet>
         <div className={styles.login__content}>
             <form onSubmit={handleLogin}>
-                <img src={HeaderLogo} alt="header logo" className={styles.login_header_logo}/>
+                <img src={HeaderLogo} alt="header logo" className={`${styles.login_header_logo} h-24 w-24`}/>
                 <div className={styles.login__center_content}>
                     <div className={styles.login__box_content}>
                         <div className={styles.login__text_content}> 
@@ -99,9 +97,6 @@ const Login: React.FC = () => {
         </div>
         </form>
     </div>
-    <div className='absolute bottom-0 bg-white w-screen h-[900px]'>
-            <AtomicFooterList/>
-              </div>
 </div>);
 };
 

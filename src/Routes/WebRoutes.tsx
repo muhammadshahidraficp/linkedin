@@ -3,10 +3,10 @@ import RouteData from "./RouteData";
 import {Routes, Route} from "react-router-dom";
 import RouteDataType from "./type";
 import { RouteConstants } from "../Utility/RouteConstantUtility";
-import Login from "../Components/Login/Login";
+import Login from "../Components/Pages/Login/Login";
 import Public from "./RouteTypes/Public";
 import Private from "./RouteTypes/Private";
-import ErrorBoundary from "../Template/ErrorBoundary";
+import ErrorBoundary from "../Components/Template/ErrorBoundary";
 
 export const RouteDataProp: {[key:string]: RouteDataType} ={
     base:{

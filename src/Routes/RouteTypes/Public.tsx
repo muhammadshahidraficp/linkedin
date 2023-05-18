@@ -1,5 +1,5 @@
 import React,{ComponentType} from "react";
-import AuthTemplate from "../../Template/AuthTemplate";
+import AuthTemplate from "../../Components/Template/AuthTemplate";
 
 interface Props {
     element:ComponentType<any>;

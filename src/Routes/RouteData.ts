@@ -1,7 +1,8 @@
-import Login from "../Components/Login/Login";
-import Signup from "../Components/Signup/Signup";
+import Login from "../Components/Pages/Login/Login";
+import Signup from "../Components/Pages/Signup/Signup";
 import { RouteConstants } from "../Utility/RouteConstantUtility";
 import RouteDataType from "./type";
+import Feed from "../Components/Template/Feed";
 
 const RouteData: { [key: string]: RouteDataType } = {
   base: {
@@ -24,7 +25,7 @@ const RouteData: { [key: string]: RouteDataType } = {
   },
   feed: {
     path: RouteConstants.feed,
-    component: Signup,
+    component: Feed,
     isPrivate: true,
     menuText: "Feed",
   },

@@ -1,0 +1,36 @@
+.feed{
+    flex:0.5;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.feed__input_options{
+    display: flex;
+    justify-content: space-evenly;  
+}
+
+.feed__input_container{
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color:white ;
+    margin-bottom: 10px;
+}
+
+.feed__input{
+    margin-top: 10px;
+    display: flex;
+}
+
+.feed__input>input{
+    flex:1;
+    margin-left: 10px;
+    border:1px solid lightgray;
+    outline:none;
+    padding-left: 20px;
+    border-radius: 20px;
+}
+
+.feed__input>input:hover{
+    background-color: lightgray;
+}
