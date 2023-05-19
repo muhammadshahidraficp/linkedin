@@ -7,6 +7,8 @@ import { Helmet } from "react-helmet";
 import HeaderLogo from "../../../Assets/linkedin_header_logo.svg";
 import GoogleLogo from "../../../Assets/google_logo.svg"; 
 import { useNavigate } from 'react-router-dom';
+import AtomicInput from "../../Atoms/AtomicInput";
+import AtomicLabel from '../../Atoms/AtomLabel';
 
 const Signup: React.FC = () => {
     const navigate = useNavigate();
@@ -30,7 +32,7 @@ const Signup: React.FC = () => {
    
     dispatch(signup(email, password) as any).then(() => {
         // Successful signup, redirect to a different page
-        navigate('/feed'); // Replace '/dashboard' with the desired page URL
+        navigate('/feed'); 
       });
   };
 
@@ -38,38 +40,67 @@ const Signup: React.FC = () => {
 
 
 <div className={styles.signup}>
-            {/* Helmet is used for changing the title */}
             <Helmet>
                 <title>Sign Up | LinkedIn</title>
             </Helmet>
-            {/* Content div */}
-            <div className={styles.signup__content}>
-                <img src={HeaderLogo} alt="header logo"  className={styles.signup_header_logo}/>
+            <div className="bg-f3f2ee overflow-y-scroll h-screen relative flex flex-col">
+                <img src={HeaderLogo} alt="header logo"  className="h-8 mt-20 ml-20"/>
                 <form onSubmit={handleSignup}>
-                <div className={styles.signup__center_content}>
-                    <div className="font-sans font-bold text-xs sm:text-base md:text-lg lg:text-3xl xl:text-3xl" > Make the most of your professional life</div>
-                    <div className={styles.signup__box_content}>
-                        <label className={styles.input__label} htmlFor="email-or-phone">Email or 
-                        phone number</label>
-                        <input className={styles.input__input} required id="email-or-phone" 
-                        type="text" name="email-or-phone"  value={email} onChange={handleEmailChange}/>
-                        
-                        <label className={styles.input__label} htmlFor="password">Password (6 or 
-                        more characters)</label>
-                    
-                        <input className={styles.input__input} autoComplete="new-password" 
-                        required id="password" type="password" name="password" placeholder="" 
-                        value={password} onChange={handlePasswordChange}/>
+                <div className="flex flex-col justify-center items-center">
+                    <div className="font-sans font-bold text-xs sm:text-base md:text-lg lg:text-3xl xl:text-3xl mt-5 mb-5" > 
+                      Make the most of your professional life
+                    </div>
+                    <div className="bg-white h-auto rounded-10px flex flex-col pb-30px mt-50px w-full md:w-1/2 lg:w-1/3">
+                        <AtomicLabel 
+                          className="font-bold mt-20px ml-20px mb-10px text-12px text-black-60 mt-5 ml-6"
+                          htmlFor="email-or-phone"
+                          id={'email-or-phone-label'}
+                          label='Email'/>
+                        <AtomicInput 
+                          value={email} 
+                          id={"email-or-phone"} 
+                          type={'email'}
+                          error={''} 
+                          hideValue={false} 
+                          onChange={handleEmailChange} 
+                          isRequired={true}
+                          className='mt-2 h-10 rounded-5px border border-solid border-lightgray w-11/12 m-auto'
+                        />
+                         <AtomicLabel 
+                          className="font-bold mb-10px text-12px text-black-60 mt-2 ml-6" 
+                          htmlFor="password" 
+                          id={'email-or-phone-label'} 
+                          label='Password (6 or more characters)'
+                        />
+                        <AtomicInput 
+                          value={password} 
+                          id={"new-password"} 
+                          type={'password'} 
+                          error={''} 
+                          hideValue={false} 
+                          onChange={handleEmailChange} 
+                          isRequired={true}
+                          className='mt-2 h-30px h-10 rounded-5px border border-solid border-lightgray w-11/12 m-auto'
+                        />
+                        <span className="text-center">
+                          {/* <p className="ml-10 mr-10 mt-3">
+                            By clicking Agree &amp; Join, you agree to the LinkedIn hjghjg jhgjhg jhg jhg jhg jh gj g jhg j gj gjhjhgjhgjh gjhg jh gj gj g jg jhg jgh <a>User</a>
+                          </p> */}
+                          <p className="whitespace-nowrap mb-3">
+                            <a target="_blank" rel="noopener noreferrer" 
+                              href="https://www.linkedin.com/legal/user-agreement?trk=registration-frontend_join-form-user-agreement">Agreement,</a> <a className='bg-#0077b5' href='test.com'>Privacy Policy,</a> and <a  className='bg-#0077b5' href="https://www.linkedin.com/legal/cookie-policy?trk=registration-frontend_join-form-cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy.</a>
+                          </p>
+                        </span>
 
-                        <span className={styles.signup__agreement_span}>By clicking Agree &amp; 
-                        Join, you agree to the LinkedIn <a target="_blank" rel="noopener 
-                        noreferrer" href="https://www.linkedin.com/legal/user-agreement?
-                        trk=registration-frontend_join-form-user-agreement"  >User Agreement</a>, 
+                        
+                        
+                        {/* <span className={styles.signup__agreement_span}>By clicking Agree &amp; 
+                        Join, you agree to the LinkedIn <a   >User Agreement</a>, 
                         <a  target="_blank" rel="noopener noreferrer" href="https://www.linkedin.
                         com/legal/privacy-policy?trk=registration-frontend_join-form-privacy-policy"  >Privacy Policy</a>,
                          and  <a href="https://www.linkedin.com/legal/cookie-policy?
                          trk=registration-frontend_join-form-cookie-policy" target="_blank" 
-                         rel="noopener noreferrer" >Cookie Policy</a>. </span>
+                         rel="noopener noreferrer" >Cookie Policy</a>. </span> */}
 
                         <button type="submit" id="join-form-submit" 
                         className={styles.form__form_body_submit_button} 
@@ -83,7 +114,7 @@ const Signup: React.FC = () => {
                             <span>Continue with google</span>
                         </div>
                         
-                        <div className={styles.main__sign_in_container}>Already on LinkedIn?&nbsp;
+                        <div className={`${styles.main__sign_in_container}`} style={{ marginBottom: '15.9px' }}>Already on LinkedIn?&nbsp;
 
                         <a href="/login" className={styles.main__sign_in_link}> Sign in</a>
                         </div>
