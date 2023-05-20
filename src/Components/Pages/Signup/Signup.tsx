@@ -78,33 +78,21 @@ const Signup: React.FC = () => {
                           type={'password'} 
                           error={''} 
                           hideValue={false} 
-                          onChange={handleEmailChange} 
+                          onChange={handlePasswordChange}
                           isRequired={true}
                           className='mt-2 h-30px h-10 rounded-5px border border-solid border-lightgray w-11/12 m-auto'
                         />
-                        <span className="text-center">
-                          {/* <p className="ml-10 mr-10 mt-3">
-                            By clicking Agree &amp; Join, you agree to the LinkedIn hjghjg jhgjhg jhg jhg jhg jh gj g jhg j gj gjhjhgjhgjh gjhg jh gj gj g jg jhg jgh <a>User</a>
-                          </p> */}
-                          <p className="whitespace-nowrap mb-3">
-                            <a target="_blank" rel="noopener noreferrer" 
-                              href="https://www.linkedin.com/legal/user-agreement?trk=registration-frontend_join-form-user-agreement">Agreement,</a> <a className='bg-#0077b5' href='test.com'>Privacy Policy,</a> and <a  className='bg-#0077b5' href="https://www.linkedin.com/legal/cookie-policy?trk=registration-frontend_join-form-cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy.</a>
-                          </p>
-                        </span>
-
-                        
-                        
-                        {/* <span className={styles.signup__agreement_span}>By clicking Agree &amp; 
-                        Join, you agree to the LinkedIn <a   >User Agreement</a>, 
+                        <span className={styles.signup__agreement_span}>By clicking Agree &amp;
+                        Join, you agree to the LinkedIn <a href='https://www.linkedin.com'>User Agreement</a>,
                         <a  target="_blank" rel="noopener noreferrer" href="https://www.linkedin.
                         com/legal/privacy-policy?trk=registration-frontend_join-form-privacy-policy"  >Privacy Policy</a>,
                          and  <a href="https://www.linkedin.com/legal/cookie-policy?
                          trk=registration-frontend_join-form-cookie-policy" target="_blank" 
-                         rel="noopener noreferrer" >Cookie Policy</a>. </span> */}
+                         rel="noopener noreferrer" >Cookie Policy</a>. </span>
 
                         <button type="submit" id="join-form-submit" 
                         className={styles.form__form_body_submit_button} 
-                        value="Agree &amp; Join" disabled={loading}>Agree &amp; Join</button>
+                        value="Agree &amp; Join" disabled={loading}>Agree &amp;Join</button>
 
                         <h2 className={styles.content__or_h2}><span 
                         className={styles.content__or_span}>or</span></h2>

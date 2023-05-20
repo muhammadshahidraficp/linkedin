@@ -9,7 +9,6 @@ interface AtomicFooterListItemProps {
   const AtomicFooterListItem: React.FC<AtomicFooterListItemProps> = ({ text,keyString }) => {
   return (
     <li key={keyString} className={styles.login__li__footer_list_text}>
-      {keyString}
       {text}
     </li>
   );
