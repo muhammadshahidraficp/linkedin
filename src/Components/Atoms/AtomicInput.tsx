@@ -37,6 +37,14 @@ const AtomicInput: React.FC<AtomicInputProps> = ({
     isRequired=false,
     onChange
 }) => {
+  let autoComplete: string | undefined;
+  if (type === 'email') {
+    autoComplete = 'username';
+  } else if (type === 'password') {
+    autoComplete = 'current-password';
+  } else {
+    autoComplete = undefined;
+  }
   return (
     <input
       className= {`${className}`}
@@ -46,6 +54,7 @@ const AtomicInput: React.FC<AtomicInputProps> = ({
       value={value}
       onChange={onChange}
       required={isRequired}
+      autoComplete={autoComplete}
     />
   );
 };

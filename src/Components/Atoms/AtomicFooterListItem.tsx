@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from "../Pages/Login/Login.module.css";
 
 interface AtomicFooterListItemProps {
     text: string;
@@ -8,7 +7,7 @@ interface AtomicFooterListItemProps {
 
   const AtomicFooterListItem: React.FC<AtomicFooterListItemProps> = ({ text,keyString }) => {
   return (
-    <li key={keyString} className={styles.login__li__footer_list_text}>
+    <li key={keyString} className="font-bold text-xs pl-2 text-gray-500">
       {text}
     </li>
   );
