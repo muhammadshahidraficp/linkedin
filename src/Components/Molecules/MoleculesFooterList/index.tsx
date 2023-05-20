@@ -23,7 +23,7 @@ const AtomicFooterList: React.FC = () => {
         </li>
         <li key="login__li__footer_list_year" className={styles.login__li__footer_list_year}>@2023</li>
         {
-          listOptions.map((option,index) => (<AtomicFooterListItem keyString={index.toString()} text={option}/>))
+          listOptions.map((option,index) => (<AtomicFooterListItem keyString={index.toString()} key={index.toString()} text={option}/>))
         }
         <li key="login__li__footer_list_text" className={styles.login__li__footer_list_text}>
         <AtomicDropdown options={languageOptions} onSelect={handleOptionSelect}/>

@@ -7,7 +7,7 @@ interface AtomicFooterListItemProps {
 
   const AtomicFooterListItem: React.FC<AtomicFooterListItemProps> = ({ text,keyString }) => {
   return (
-    <li key={keyString} className="font-bold text-xs pl-2 text-gray-500">
+    <li key={`${keyString}-footer`} className="font-bold text-xs pl-2 text-gray-500">
       {text}
     </li>
   );

@@ -11,7 +11,7 @@ import AtomicInput from "../../Atoms/AtomicInput";
 import AtomicLabel from '../../Atoms/AtomLabel';
 
 const Signup: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state: RootState) => state.auth.loading);
 
