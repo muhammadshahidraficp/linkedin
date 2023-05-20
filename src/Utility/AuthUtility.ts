@@ -4,6 +4,10 @@ async function isLoggedIn() {
   return auth.currentUser ? true : false;
 }
 
-const AuthFunctions = { isLoggedIn };
+async function LogOut() {
+  return auth.signOut();
+}
+
+const AuthFunctions = { isLoggedIn, LogOut };
 
 export default AuthFunctions;
