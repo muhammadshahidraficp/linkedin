@@ -12,7 +12,7 @@ const Feed: React.FC = () => {
                 <title>Feed | LinkedIn</title>
             </Helmet>
             <HeaderOrganism />
-            <div className='bg-gray-100 flex mt-10'>
+            <div className='bg-gray-100 flex flex-1/5 mt-10'>
                 <ProfileSideBar />
                 <FeedPostSection />
                 <Widget />

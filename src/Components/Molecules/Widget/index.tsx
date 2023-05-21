@@ -7,7 +7,7 @@ const ProfileSideBar: React.FC = () => {
     { "title": "title 1", "subtitle": "This is a sub title" }];
 
     return (
-        <div className="bg-white flex-1/5 h-fit-content mt-10 ml-10 rounded-10">
+        <div className="bg-white flex-1  mt-10 ml-10 rounded-10 mr-10">
             <div className="flex items-center justify-between pl-10 pr-10">
                 <h3>Linkedin news</h3>
                 <Info />

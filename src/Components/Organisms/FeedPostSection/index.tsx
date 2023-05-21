@@ -26,7 +26,7 @@ const FeedPostSection: React.FC = () => {
   ];
 
   return (
-    <div className="flex-1/2 mt-10 ml-10">
+    <div className="flex-2 mt-10 ml-10">
       <div className="pt-10 pr-10 pl-10 bg-white mb-10">
         <div className="mt-10 flex">
           <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
