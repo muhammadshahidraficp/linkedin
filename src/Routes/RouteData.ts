@@ -2,7 +2,7 @@ import Login from "../Components/Pages/Login/Login";
 import Signup from "../Components/Pages/Signup/Signup";
 import { RouteConstants } from "../Utility/RouteConstantUtility";
 import RouteDataType from "./type";
-import Feed from "../Components/Template/Feed";
+import Feed from "../Components/Pages/Feed";
 
 const RouteData: { [key: string]: RouteDataType } = {
   base: {
