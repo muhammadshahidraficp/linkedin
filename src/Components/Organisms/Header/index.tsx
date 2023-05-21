@@ -19,7 +19,7 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
                 <img src={logo} alt="logo" className="object-contain h-8 mr-3" />
                 <div className="flex items-center h-5 rounded-5 p-10 bg-eef3f8">
                     <Search />
-                    <input type="text" placeholder='search' className="bg-eef3f8" />
+                    <input type="text" placeholder='search' className="bg-eef3f8 border-none" />
                 </div>
             </div>
             <div className="flex items-center justify-center h-full">
