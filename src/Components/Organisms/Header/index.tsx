@@ -14,10 +14,10 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
     const [selectedTab, setSelectedTab] = useState("Home");
 
     return (
-        <div className="sticky top-0 bg-white border-b border-gray-200 flex justify-evenly w-full h-15 z-10">
-            <div className="flex items-center justify-center h-full">
+        <div className="sticky top-0  border-b border-gray-200 flex justify-evenly z-10">
+            <div className="flex items-center justify-center">
                 <img src={logo} alt="logo" className="object-contain h-8 mr-3" />
-                <div className="flex items-center h-5 rounded-5 p-10 bg-eef3f8">
+                <div className="flex items-center h-5 rounded-5 p-2 bg-eef3f8">
                     <Search />
                     <input type="text" placeholder='search' className="bg-eef3f8 border-none" />
                 </div>
