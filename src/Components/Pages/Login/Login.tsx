@@ -11,9 +11,11 @@ import AppleLogo from "../../../Assets/apple_logo.svg";
 
 import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const loading = useSelector((state: RootState) => state.auth.loading);
 
     const [email, setEmail] = useState('');
@@ -29,7 +31,9 @@ const Login: React.FC = () => {
 
     const handleLogin = (event: React.FormEvent) => {
         event.preventDefault();
-        dispatch(login(email, password) as any);
+        dispatch(login(email, password) as any).then(() => {
+            navigate('/feed');
+        });
     };
 
 

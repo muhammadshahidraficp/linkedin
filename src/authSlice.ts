@@ -73,6 +73,7 @@ export const login =
   async (dispatch: any) => {
     try {
       dispatch(setLoading(true));
+
       await signInWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       if (user) {
