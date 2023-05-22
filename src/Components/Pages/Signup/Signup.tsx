@@ -42,7 +42,7 @@ const Signup: React.FC = () => {
       }
     });
     return () => unsubscribe();
-  }, []);
+  });
 
   return (
     <div className={styles.signup}>

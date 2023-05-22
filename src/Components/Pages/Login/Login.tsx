@@ -48,7 +48,7 @@ const Login: React.FC = () => {
           }
         });
         return () => unsubscribe();
-      }, []);
+      });
 
 
 

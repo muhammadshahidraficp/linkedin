@@ -7,6 +7,7 @@ import Notifications from '@mui/icons-material/Notifications';
 import { useState } from "react";
 import { Search } from "@mui/icons-material";
 import logo from "../../../Assets/logo.svg";
+import Avatar from "@mui/material/Avatar";
 
 interface HeaderOrganismProps { }
 
@@ -23,22 +24,25 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
                 </div>
             </div>
             <div className="flex items-center justify-center h-full">
-                <div onClick={() => setSelectedTab("Home")} >
+                <div onClick={() => setSelectedTab("Home")} className="flex items-center">
                     <AtomicHeaderOptions Icon={Home} title="Home" isSelected={selectedTab === "Home" ? true : false} avatar={""} />
                 </div>
-                <div onClick={() => setSelectedTab("My Network")} >
+                <div onClick={() => setSelectedTab("My Network")} className="flex items-center">
                     <AtomicHeaderOptions Icon={SupervisorAccount} title="My Network" isSelected={selectedTab === "My Network" ? true : false} avatar={""} />
                 </div>
-                <div onClick={() => setSelectedTab("Jobs")} >
+                <div onClick={() => setSelectedTab("Jobs")} className="flex items-center">
                     <AtomicHeaderOptions Icon={BusinessCenter} title="Jobs" isSelected={selectedTab === "Jobs" ? true : false} avatar={""} />
                 </div>
-                <div onClick={() => setSelectedTab("Chat")} >
+                <div onClick={() => setSelectedTab("Chat")} className="flex items-center">
                     <AtomicHeaderOptions Icon={Chat} title="Chat" isSelected={selectedTab === "Chat" ? true : false} avatar={""} />
                 </div>
-                <div onClick={() => setSelectedTab("Notification")} >
+                <div onClick={() => setSelectedTab("Notification")} className="flex items-center">
                     <AtomicHeaderOptions Icon={Notifications} title="Notification" isSelected={selectedTab === "Notification" ? true : false} avatar={""} />
                 </div>
-                <AtomicHeaderOptions avatar="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" title="Me" />
+                <div className="flex flex-col items-center cursor-pointer text-gray-500 ml-20 justify-center">
+                    <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" className="object-contain-25" />
+                    <h3>Me</h3>
+                </div>
             </div>
         </div>
     )
