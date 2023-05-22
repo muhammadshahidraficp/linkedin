@@ -2,7 +2,7 @@ import auth from "../firebase";
 
 async function isLoggedIn() {
   console.log(auth.currentUser?.email);
-  return auth.currentUser ? true : true;
+  return auth.currentUser ? true : false;
 }
 
 async function LogOut() {

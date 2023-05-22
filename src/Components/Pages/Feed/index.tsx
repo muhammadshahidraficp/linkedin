@@ -1,16 +1,18 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import HeaderOrganism from '../../Organisms/Header';
 import FeedPostSection from '../../Organisms/FeedPostSection';
 import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Feed: React.FC = () => {
     return (
         <div className="">
-            <Helmet>
-                <title>Feed | LinkedIn</title>
-            </Helmet>
+            <HelmetProvider>
+                <Helmet>
+                    <title>Feed | LinkedIn</title>
+                </Helmet>
+            </HelmetProvider>
             <HeaderOrganism />
             <div className='bg-gray-100 flex flex-1/5 mt-10'>
                 <ProfileSideBar />

@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../../../authSlice';
 import { RootState } from '../../../store';
 import styles from "./Signup.module.css";
-import { Helmet } from "react-helmet";
 import HeaderLogo from "../../../Assets/linkedin_header_logo.svg";
 import GoogleLogo from "../../../Assets/google_logo.svg";
 import { useNavigate } from 'react-router-dom';
 import AtomicInput from "../../Atoms/AtomicInput";
 import AtomicLabel from '../../Atoms/AtomLabel';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Signup: React.FC = () => {
   const navigate = useNavigate();
@@ -37,9 +37,11 @@ const Signup: React.FC = () => {
 
 
     <div className={styles.signup}>
-      <Helmet>
-        <title>Sign Up | LinkedIn</title>
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <title>Sign Up | LinkedIn</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="bg-f3f2ee overflow-y-scroll h-screen relative flex flex-col">
         <img src={HeaderLogo} alt="header logo" className="h-8 mt-20 ml-20" />
         <form onSubmit={handleSignup}>

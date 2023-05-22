@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from "./Login.module.css"
-import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../authSlice';
 import { RootState } from '../../../store';
@@ -12,6 +11,7 @@ import AppleLogo from "../../../Assets/apple_logo.svg";
 import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
 import { useNavigate } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Login: React.FC = () => {
     const dispatch = useDispatch();
@@ -40,9 +40,11 @@ const Login: React.FC = () => {
 
     return (
         <div className={styles.login}>
-            <Helmet>
-                <title>LinkedIn Login, Sign in | LinkedIn</title>
-            </Helmet>
+            <HelmetProvider>
+                <Helmet>
+                    <title>LinkedIn Login, Sign in | LinkedIn</title>
+                </Helmet>
+            </HelmetProvider>
             <div className={styles.login__content}>
                 <form onSubmit={handleLogin}>
                     <img src={HeaderLogo} alt="header logo" className={`${styles.login_header_logo} h-24 w-24`} />
@@ -61,6 +63,7 @@ const Login: React.FC = () => {
                                     marginTop: "30px"
                                 }}
                                 value={email} onChange={handleEmailChange}
+                                autoComplete="username"
                             />
                             <TextField className={styles.login__input}
                                 fullWidth
@@ -71,6 +74,7 @@ const Login: React.FC = () => {
                                         <span className={styles.input__password_show}>show</span>
                                     </InputAdornment>
                                 }} value={password} onChange={handlePasswordChange}
+                                autoComplete="current-password"
                             />
 
                             <p className={styles.login__forgot_password}>Forgot password?</p>
