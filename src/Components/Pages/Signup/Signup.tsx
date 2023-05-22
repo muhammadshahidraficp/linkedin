@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../../../authSlice';
 import { RootState } from '../../../store';
@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import AtomicInput from "../../Atoms/AtomicInput";
 import AtomicLabel from '../../Atoms/AtomLabel';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const Signup: React.FC = () => {
   const navigate = useNavigate();
@@ -33,9 +34,17 @@ const Signup: React.FC = () => {
     });
   };
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
+      if (user) {
+        navigate('/feed');
+      } else {
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
-
-
     <div className={styles.signup}>
       <HelmetProvider>
         <Helmet>
