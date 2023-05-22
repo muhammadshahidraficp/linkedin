@@ -20,6 +20,7 @@ const Login: React.FC = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(event.target.value);
@@ -27,6 +28,10 @@ const Login: React.FC = () => {
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
+    };
+
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
     };
 
     const handleLogin = (event: React.FormEvent) => {
@@ -68,10 +73,10 @@ const Login: React.FC = () => {
                             <TextField className={styles.login__input}
                                 fullWidth
                                 label="Password"
-                                type="password"
+                                type={showPassword ? 'text' : 'password'}
                                 InputProps={{
-                                    endAdornment: <InputAdornment position="end" >
-                                        <span className={styles.input__password_show}>show</span>
+                                    endAdornment: <InputAdornment position="end">
+                                        <span className={styles.input__password_show} onClick={handleShowPassword}> {showPassword ? 'hide' : 'show'}</span>
                                     </InputAdornment>
                                 }} value={password} onChange={handlePasswordChange}
                                 autoComplete="current-password"
