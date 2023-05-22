@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./Login.module.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../authSlice';
@@ -12,6 +12,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
 import { useNavigate } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Login: React.FC = () => {
     const dispatch = useDispatch();
@@ -36,10 +37,18 @@ const Login: React.FC = () => {
 
     const handleLogin = (event: React.FormEvent) => {
         event.preventDefault();
-        dispatch(login(email, password) as any).then(() => {
-            navigate('/feed');
-        });
+        dispatch(login(email, password) as any);
     };
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
+          if (user) {
+            navigate('/feed');
+          } else {
+          }
+        });
+        return () => unsubscribe();
+      }, []);
 
 
 
@@ -73,7 +82,7 @@ const Login: React.FC = () => {
                             <TextField className={styles.login__input}
                                 fullWidth
                                 label="Password"
-                                type={showPassword ? 'text' : 'password'}
+                                 type={showPassword ? 'text' : 'password'}
                                 InputProps={{
                                     endAdornment: <InputAdornment position="end">
                                         <span className={styles.input__password_show} onClick={handleShowPassword}> {showPassword ? 'hide' : 'show'}</span>
