@@ -10,9 +10,9 @@ interface AtomicHeaderOptionsProps {
 
 const AtomicHeaderOptions: React.FC<AtomicHeaderOptionsProps> = ({ avatar, Icon, title, isSelected }) => {
     return (
-        <div >
+        <div className="text-center">
             {Icon && <Icon fsx={{ width : '20px' , height:"20px" }}/>}
-            {avatar && <Avatar src={avatar} className="object-contain-25" sizes="10px" />}
+            {avatar && <Avatar src={avatar} className="object-contain-25" />}
             <h3 className={isSelected ? styles.header__options__title_selected : styles.header__options__title}>
                 {title}
             </h3>

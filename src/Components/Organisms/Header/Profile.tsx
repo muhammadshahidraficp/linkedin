@@ -6,8 +6,8 @@ export default function Profile() {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     return (<div>
-        <div className="flex flex-col items-center cursor-pointer text-gray-500 ">
-            <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" className="object-contain-25" sizes="10px" />
+        <div className="flex flex-col items-center justify-center cursor-pointer text-gray-500 p-2">
+            <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" sx={{width: 30, height: 30}} />
             <h3 onClick={() => setMenuOpen(!isMenuOpen)} className="relative">Me</h3>
         </div>
         {isMenuOpen && (
