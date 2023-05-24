@@ -7,18 +7,23 @@ import Notifications from '@mui/icons-material/Notifications';
 import { useState } from "react";
 import { Search } from "@mui/icons-material";
 import logo from "../../../Assets/logo.svg";
-import Avatar from "@mui/material/Avatar";
 import Profile from "./Profile";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { SvgIconTypeMap } from "@mui/material";
 
 interface HeaderOrganismProps { }
 
+interface headerTabListType {
+    title: string;
+    icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+        muiName: string;
+    }
+};
+
 const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
     const [selectedTab, setSelectedTab] = useState("Home");
-    const [isMenuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!isMenuOpen);
-      };
+    const headerTabList: headerTabListType[] = [{ title: "Home",icon:Home }, { title: "My Network" ,icon:SupervisorAccount}, { title: "Jobs",icon: BusinessCenter}, { title: "Messaging",icon: Chat}, { title: "Notifications",icon:Notifications }];
 
     return (
         <div className="sticky top-0  border-b border-gray-200 flex justify-evenly z-10">
@@ -31,30 +36,16 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
             </div>
             <div className="flex items-center justify-center h-full">
                 <div className="flex flex-row gap-20">
-                {
-                    ["" , "" , "" ,""].map(() =>   <div onClick={() => setSelectedTab("Home")} className="flex items-center">
-                    <AtomicHeaderOptions Icon={Home} title="Home" isSelected={selectedTab === "Home" ? true : false} avatar={""} />
-                </div>)
-                }
+                    {
+                        headerTabList.map((tab) => <div onClick={() => setSelectedTab(tab.title)} className="flex items-center">
+                            <AtomicHeaderOptions Icon={tab.icon} title={tab.title} isSelected={selectedTab === "Home" ? true : false} avatar={""} />
+                        </div>)
+                    }
                 </div>
-              
-              
-                {/* <div onClick={() => setSelectedTab("My Network")} className="flex items-center">
-                    <AtomicHeaderOptions Icon={SupervisorAccount} title="My Network" isSelected={selectedTab === "My Network" ? true : false} avatar={""} />
-                </div>
-                <div onClick={() => setSelectedTab("Jobs")} className="flex items-center">
-                    <AtomicHeaderOptions Icon={BusinessCenter} title="Jobs" isSelected={selectedTab === "Jobs" ? true : false} avatar={""} />
-                </div>
-                <div onClick={() => setSelectedTab("Chat")} className="flex items-center">
-                    <AtomicHeaderOptions Icon={Chat} title="Chat" isSelected={selectedTab === "Chat" ? true : false} avatar={""} />
-                </div>
-                <div onClick={() => setSelectedTab("Notification")} className="flex items-center">
-                    <AtomicHeaderOptions Icon={Notifications} title="Notification" isSelected={selectedTab === "Notification" ? true : false} avatar={""} />
-                </div> */}
                 <div className="ml-20">
-                <Profile />
+                    <Profile />
                 </div>
-              
+
             </div>
         </div>
     )
