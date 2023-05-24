@@ -26,7 +26,7 @@ const Feed: React.FC = () => {
         <div className="loader"></div>
       ) : (<div>
             <HeaderOrganism />
-            <div className='bg-gray-100 flex flex-1/5 '>
+            <div className='bg-gray-100 grid grid-cols-3 gap-2'>
                 <ProfileSideBar key="profile-side-bar" />
                 <FeedPostSection />
                 <Widget />

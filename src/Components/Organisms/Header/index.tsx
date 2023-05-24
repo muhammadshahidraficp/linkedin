@@ -10,6 +10,8 @@ import logo from "../../../Assets/logo.svg";
 import Profile from "./Profile";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { SvgIconTypeMap } from "@mui/material";
+import {RouteConstants} from "../../../Utility/RouteConstantUtility";
+import {  useNavigate } from "react-router-dom";
 
 interface HeaderOrganismProps { }
 
@@ -17,13 +19,22 @@ interface headerTabListType {
     title: string;
     icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
         muiName: string;
-    }
+    },
+    navigationTo: string;
 };
 
 const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
-    const [selectedTab, setSelectedTab] = useState("Home");
 
-    const headerTabList: headerTabListType[] = [{ title: "Home",icon:Home }, { title: "My Network" ,icon:SupervisorAccount}, { title: "Jobs",icon: BusinessCenter}, { title: "Messaging",icon: Chat}, { title: "Notifications",icon:Notifications }];
+    const navigate = useNavigate();
+    
+    const headerTabList: headerTabListType[] = [
+        { title: "Home",icon:Home, navigationTo:RouteConstants.feed },
+        { title: "My Network" ,icon:SupervisorAccount, navigationTo:RouteConstants.network},
+        { title: "Jobs",icon: BusinessCenter, navigationTo:RouteConstants.jobs},
+        { title: "Messaging",icon: Chat, navigationTo:RouteConstants.messaging},
+        { title: "Notifications",icon:Notifications, navigationTo:RouteConstants.notifications }
+    ];
+    const [selectedTab, setSelectedTab] = useState(headerTabList[0].title);
 
     return (
         <div className="sticky top-0  border-b border-gray-200 flex justify-evenly z-10">
@@ -35,10 +46,14 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
                 </div>
             </div>
             <div className="flex items-center justify-center h-full">
-                <div className="flex flex-row gap-20">
+                <div className="flex flex-row gap-5">
                     {
-                        headerTabList.map((tab) => <div onClick={() => setSelectedTab(tab.title)} className="flex items-center">
-                            <AtomicHeaderOptions Icon={tab.icon} title={tab.title} isSelected={selectedTab === "Home" ? true : false} avatar={""} />
+                        headerTabList.map((tab) => <div onClick={() => { 
+                                setSelectedTab(tab.title);
+                                navigate(tab.navigationTo)
+                            }
+                        } className="flex items-center">
+                            <AtomicHeaderOptions key={tab.title} Icon={tab.icon} title={tab.title} isSelected={selectedTab === tab.title ? true : false} avatar={""} />
                         </div>)
                     }
                 </div>
