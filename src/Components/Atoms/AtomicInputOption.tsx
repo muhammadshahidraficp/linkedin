@@ -1,6 +1,4 @@
 import React, { ReactElement } from "react";
-import { Typography } from "@mui/material";
-import { TypographyProps } from "@mui/material/Typography";
 
 import styles from "./InputOptions.module.css";
 
@@ -8,21 +6,19 @@ interface InputOptionsProps {
   IconComponent: any;
   title: string;
   color: string;
-  TypographyProps?: TypographyProps;
 }
 
 const AtomicInputOptions: React.FC<InputOptionsProps> = ({
   IconComponent,
   title,
   color,
-  TypographyProps
 }): ReactElement => {
   return (
-    <div className={styles.input_options}>
+    <div className="flex items-center gap-2">
       <IconComponent style={{ color }} />
-      <Typography variant="h4" {...TypographyProps}>
+      <span className="text-sm font-bold text-gray-600">
         {title}
-      </Typography>
+      </span>
     </div>
   );
 };
