@@ -10,7 +10,8 @@ const ProfileSideBar: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white flex-1  mt-10 ml-10 rounded-10 mr-10">
+        <div>
+            <div className='bg-white flex-1 py-2 mt-10 ml-10 rounded-md mr-10'>
             <div className="flex items-center justify-between pl-10 pr-10 mt-2 mb-2">
                 <h3>Linkedin news</h3>
                 <Info />
@@ -21,6 +22,7 @@ const ProfileSideBar: React.FC = () => {
                         subtitle={item.subtitle} />
                 )
             }
+            </div>
         </div>
     );
 }

@@ -24,10 +24,12 @@ const Feed: React.FC = () => {
             </HelmetProvider>
             {isLoading ? (
         <div className="loader"></div>
-      ) : (<div>
-            <div className='bg-gray-100 grid grid-cols-3 gap-2'>
+      ) : (<div className='bg-gray-100'>
+            <div className='grid grid-cols-4 gap-2 m-auto' style={{maxWidth: "1500px"}}>
                 <ProfileSideBar key="profile-side-bar" />
-                <FeedPostSection />
+                <div className='col-span-2'>
+                    <FeedPostSection />
+                </div>
                 <Widget />
             </div> </div>)}
         </div>
