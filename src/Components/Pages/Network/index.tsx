@@ -25,7 +25,7 @@ const Network: React.FC = () => {
             {isLoading ? (
         <div className="loader"></div>
       ) : (<div>
-            <HeaderOrganism />
+           
             <div className='bg-gray-100 grid grid-cols-3 gap-2'>
                 <ProfileSideBar key="profile-side-bar" />
                 <FeedPostSection />
