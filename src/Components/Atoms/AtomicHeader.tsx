@@ -14,7 +14,7 @@ interface AtomicHeaderOptionsProps {
 const AtomicHeaderOptions: React.FC<AtomicHeaderOptionsProps> = ({ avatar, Icon, title, isSelected }) => {
     return (
         <div className="text-center w-25">
-            {Icon && <Icon color={isSelected?"error":"inherit"}/>}
+            {Icon && <Icon sx={{ color : isSelected ? "black" : "gray"  }} />}
             {avatar && <Avatar src={avatar} className="object-contain-25"/>}
             <h3>
                 {title}
