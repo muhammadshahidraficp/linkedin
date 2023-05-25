@@ -3,6 +3,10 @@ import Signup from "../Components/Pages/Signup/Signup";
 import { RouteConstants } from "../Utility/RouteConstantUtility";
 import RouteDataType from "./type";
 import Feed from "../Components/Pages/Feed";
+import Jobs from "../Components/Pages/Jobs";
+import Messaging from "../Components/Pages/Messaging";
+import Network from "../Components/Pages/Network";
+import Notifications from "../Components/Pages/Notifications";
 
 const RouteData: { [key: string]: RouteDataType } = {
   base: {
@@ -30,26 +34,26 @@ const RouteData: { [key: string]: RouteDataType } = {
     menuText: "Feed",
   },
   network: {
-    path: RouteConstants.feed,
-    component: Feed,
+    path: RouteConstants.network,
+    component: Network,
     isPrivate: true,
     menuText: "Feed",
   },
   jobs: {
-    path: RouteConstants.feed,
-    component: Feed,
+    path: RouteConstants.jobs,
+    component: Jobs,
     isPrivate: true,
     menuText: "Feed",
   },
   messaging: {
-    path: RouteConstants.feed,
-    component: Feed,
+    path: RouteConstants.messaging,
+    component: Messaging,
     isPrivate: true,
     menuText: "Feed",
   },
   notifications: {
-    path: RouteConstants.feed,
-    component: Feed,
+    path: RouteConstants.notifications,
+    component: Notifications,
     isPrivate: true,
     menuText: "Feed",
   },
