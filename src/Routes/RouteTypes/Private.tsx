@@ -13,12 +13,12 @@ const Private: React.FC<Props> = ({ element: Element }) => {
     const navigate = useNavigate();
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
-          if (!user) {
-            navigate('/');
-          }
+            if (!user) {
+                navigate('/');
+            }
         });
         return () => unsubscribe();
-      });
+    });
 
     return (
         <DashboardTemplate>
