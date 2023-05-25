@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import HeaderOrganism from '../../Organisms/Header';
 import FeedPostSection from '../../Organisms/FeedPostSection';
 import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";

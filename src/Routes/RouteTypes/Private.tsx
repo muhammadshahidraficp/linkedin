@@ -1,8 +1,6 @@
 import React, { ComponentType, useEffect } from "react";
 import DashboardTemplate from "../../Components/Template/DashboardTemplate";
 import { useNavigate } from "react-router-dom";
-import AuthFunctions from "../../Utility/AuthUtility";
-import { RouteConstants } from "../../Utility/RouteConstantUtility"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 interface Props {

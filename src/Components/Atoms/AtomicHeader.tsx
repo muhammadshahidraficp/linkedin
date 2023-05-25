@@ -1,5 +1,4 @@
 import { Avatar, SvgIconTypeMap } from "@mui/material";
-import styles from "./Header.module.css";
 import React from 'react';
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 

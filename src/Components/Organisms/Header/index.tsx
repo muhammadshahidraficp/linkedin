@@ -41,7 +41,7 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
     return (
         <div className="sticky top-0  border-b border-gray-200 flex justify-evenly z-10">
             <div className="flex items-center justify-center">
-                <img src={logo} alt="logo" className="object-contain h-10 mr-3" />
+                <img src={logo} alt="logo" className="object-contain h-8 mr-3" />
                 <div className="flex items-center h-10 rounded-md px-3 bg-eef3f8 focus-within:border-red-500 border">
                     <Search />
                     <input type="text" placeholder={placeholder} className="bg-eef3f8 border-none outline-none" />
@@ -60,7 +60,7 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
                         </div>)
                     }
                 </div>
-                <div className="ml-5">
+                <div className="ml-20">
                     <Profile />
                 </div>
 
