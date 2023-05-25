@@ -36,13 +36,15 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
     ];
     const [selectedTab, setSelectedTab] = useState(headerTabList[0].title);
 
+    const [placeholder, setPlaceholder]=useState("Search");
+
     return (
         <div className="sticky top-0  border-b border-gray-200 flex justify-evenly z-10">
             <div className="flex items-center justify-center">
                 <img src={logo} alt="logo" className="object-contain h-8 mr-3" />
                 <div className="flex items-center h-5 rounded-5 p-2 bg-eef3f8">
                     <Search />
-                    <input type="text" placeholder='search' className="bg-eef3f8 border-none" />
+                    <input type="text" placeholder={placeholder} className="bg-eef3f8 border-none" />
                 </div>
             </div>
             <div className="flex items-center justify-center h-full">
@@ -51,6 +53,7 @@ const HeaderOrganism: React.FC<HeaderOrganismProps> = () => {
                         headerTabList.map((tab) => <div onClick={() => { 
                                 setSelectedTab(tab.title);
                                 navigate(tab.navigationTo)
+                                    setPlaceholder( tab.title === headerTabList[2].title ? "Search by title, skill, or company" : "Search");
                             }
                         } className="flex items-center">
                             <AtomicHeaderOptions key={tab.title} Icon={tab.icon} title={tab.title} isSelected={selectedTab === tab.title ? true : false} avatar={""} />

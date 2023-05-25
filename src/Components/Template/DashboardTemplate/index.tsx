@@ -8,7 +8,7 @@ type Props = {
 const DashboardTemplate:React.FC<Props> = ({children}) =>{
     return(<div className="h-full">
          <HeaderOrganism />
-     {children}
+            {children}
     </div>);
  }
  
