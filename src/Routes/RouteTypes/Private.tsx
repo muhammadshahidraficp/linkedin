@@ -3,6 +3,7 @@ import DashboardTemplate from "../../Components/Template/DashboardTemplate";
 import { useNavigate } from "react-router-dom";
 import AuthFunctions from "../../Utility/AuthUtility";
 import { RouteConstants } from "../../Utility/RouteConstantUtility"
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 interface Props {
     element: ComponentType<any>;
@@ -11,17 +12,13 @@ interface Props {
 const Private: React.FC<Props> = ({ element: Element }) => {
     const navigate = useNavigate();
     useEffect(() => {
-        async function checkLoggedIn() {
-            const isLogged = await AuthFunctions.isLoggedIn();
-
-            console.log(isLogged);
-            if (!isLogged) {
-                //await AuthFunctions.LogOut();
-                navigate(RouteConstants.base);
-            }
-        }
-        checkLoggedIn();
-    });
+        const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
+          if (!user) {
+            navigate('/');
+          }
+        });
+        return () => unsubscribe();
+      });
 
     return (
         <DashboardTemplate>
