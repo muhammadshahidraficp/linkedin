@@ -8,23 +8,10 @@ import Subscriptions from '@mui/icons-material/Subscriptions';
 import EventNote from '@mui/icons-material/EventNote';
 import CalendarViewDay from '@mui/icons-material/CalendarViewDay';
 import { Avatar } from "@mui/material";
+import { posts } from "../../Organisms/FeedPostSection";
 
-interface PostData {
-  avatar: string;
-  name: string;
-  description: string;
-  message: string;
-}
 
 const Feed: React.FC = () => {
-  const posts: PostData[] = [
-    { avatar: "", name: "Cybersquare", description: "baabte", message: "Lorem ipsum" },
-    { avatar: "", name: "Cybersquare", description: "baabte", message: "Lorem ipsum" },
-    { avatar: "", name: "Cybersquare", description: "baabte", message: "Lorem ipsum" },
-    { avatar: "", name: "Cybersquare", description: "baabte", message: "Lorem ipsum" },
-    { avatar: "", name: "Cybersquare", description: "baabte", message: "Lorem ipsum" },
-    { avatar: "", name: "Cybersquare", description: "baabte", message: "Lorem ipsum" },
-  ];
 
   return (
     <div className={styles.feed}>
@@ -41,7 +28,7 @@ const Feed: React.FC = () => {
         </div>
       </div>
       {posts.map((post, index) => (
-        <Post key={index} />
+        <Post key={index} post={post} />
       ))}
     </div>
   );

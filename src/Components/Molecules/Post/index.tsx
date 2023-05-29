@@ -3,8 +3,9 @@ import InputOptions from "../../Atoms/AtomicInputOption";
 
 import { Avatar } from "@mui/material";
 import { ThumbsUpDown, ChatOutlined, ShareOutlined, SendOutlined } from "@mui/icons-material";
+import { PostData } from "../../Organisms/FeedPostSection";
 
-function Post() {
+function Post({post}:{ post :PostData}) {
   return (
     <div className={styles.post}>
       <div className={styles.post__header}>
@@ -15,7 +16,15 @@ function Post() {
         </div>
       </div>
       <div className={styles.post__body}>
-        Message goes here
+        {post.message}
+        <div className="py-4">
+          {!!post.imageUrl ? <img src={post.imageUrl} className="w-full"/> : post.sourceUrl ? <div> 
+          <video width="100%" controls>
+  <source src={post.sourceUrl} type="video/mp4" />
+  Your browser does not support the video tag.
+</video> 
+          </div> : null }
+        </div>
       </div>
       <div className={styles.post__button}>
         <InputOptions IconComponent={ThumbsUpDown} title="Like" color="#70B5F9" />

@@ -17,6 +17,35 @@ const ProfileSideBar: React.FC = () => {
             <h4>Content development</h4>
         </div>
 
+        <div className="flex flex-col rounded-tl-2xl rounded-tr-2xl items-center bg-white">
+            <img src={Banner} alt="sidebar banner" />
+            <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                alt="avatar" className="border-2 border-white" />
+            <h2 >Muhammad Shahid Rafi C P</h2>
+            <h4>Content development</h4>
+        </div>
+        <div className="flex flex-col rounded-tl-2xl rounded-tr-2xl items-center bg-white">
+            <img src={Banner} alt="sidebar banner" />
+            <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                alt="avatar" className="border-2 border-white" />
+            <h2 >Muhammad Shahid Rafi C P</h2>
+            <h4>Content development</h4>
+        </div>
+        <div className="flex flex-col rounded-tl-2xl rounded-tr-2xl items-center bg-white">
+            <img src={Banner} alt="sidebar banner" />
+            <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                alt="avatar" className="border-2 border-white" />
+            <h2 >Muhammad Shahid Rafi C P</h2>
+            <h4>Content development</h4>
+        </div>
+        <div className=" sticky top-0 flex flex-col rounded-tl-2xl rounded-tr-2xl items-center bg-white">
+            <img src={Banner} alt="sidebar banner" />
+            <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                alt="avatar" className="border-2 border-white" />
+            <h2 >Muhammad Shahid Rafi C P11111222222222222222222</h2>
+            <h4>Content development</h4>
+        </div>
+
         {/* <div className={styles.sidebar__stats}>
             <SidebarStat text="Who has viewed your profile" data="121" />
             <SidebarStat text="Impressions of your post" data="33" />
