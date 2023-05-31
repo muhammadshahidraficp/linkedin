@@ -3,6 +3,10 @@ import FeedPostSection from '../../Organisms/FeedPostSection';
 import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import MoleculeSibarMyNetwork from '../../Molecules/MoleculeSidebarMyNetwork';
+import MoleculePendingInvitation from '../../Molecules/MoleculePendingInvitation';
+import MoleculeCelebration from '../../Molecules/MoleculeCelebration';
+import MoleculePeopleYouKnow from '../../Molecules/MoleculePeopleYouKnow';
 
 const Network: React.FC = () => {
 
@@ -23,13 +27,14 @@ const Network: React.FC = () => {
             </HelmetProvider>
             {isLoading ? (
                 <div className="loader"></div>
-            ) : (<div className='bg-gray-100'>
+            ) : (<div className='bg-gray-100 min-h-screen'>
                 <div className='grid grid-cols-4 gap-2 m-auto' style={{ maxWidth: "1500px" }}>
-                    <ProfileSideBar key="profile-side-bar" />
-                    <div className='col-span-2'>
-                        Networking
+                    <MoleculeSibarMyNetwork />
+                    <div className='col-span-3 mt-5 ml-5 mr-5'>
+                        <MoleculePendingInvitation />
+                        <MoleculeCelebration />
+                        <MoleculePeopleYouKnow />
                     </div>
-                    <Widget />
                 </div> </div>)}
         </div>
     );

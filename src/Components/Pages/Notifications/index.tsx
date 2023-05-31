@@ -25,11 +25,11 @@ const Notifications: React.FC = () => {
                 <div className="loader"></div>
             ) : (<div className='bg-gray-100'>
                 <div className='grid grid-cols-4 gap-2 m-auto' style={{ maxWidth: "1500px" }}>
-                    <ProfileSideBar key="profile-side-bar" />
+                    {/* <ProfileSideBar key="profile-side-bar" />
                     <div className='col-span-2'>
                         Notification
                     </div>
-                    <Widget />
+                    <Widget /> */}
                 </div> </div>)}
         </div>
     );
