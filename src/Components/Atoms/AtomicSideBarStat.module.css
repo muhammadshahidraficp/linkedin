@@ -1,0 +1,94 @@
+.sidebar__stats {
+  background-color: #ffffff;
+  margin-top: 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.SidebarStat {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.SidebarStat > p {
+  margin: 2px;
+  font-size: 12px;
+}
+
+.SidebarStat__data {
+  color: blue;
+  font-weight: bold;
+}
+
+.sidebar__recent_items {
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.sidebar {
+  display: flex;
+  position: sticky;
+  top: 70px;
+  flex: 0.2;
+  height: fit-content;
+  margin-top: 10px;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.sidebar__top {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.sidebar__top > img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  margin-bottom: -20px;
+}
+
+.sidebar__top > h2 {
+  font-size: 18px;
+  margin: 5px;
+  text-align: center;
+}
+
+.sidebar__top > h4 {
+  font-size: 12px;
+  color: grey;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+
+.sidebar__avatar {
+  border: 2px solid #ffffff;
+}
+
+.sidebar__stats {
+  background-color: #ffffff;
+  margin-top: 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sidebar__bottom {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
