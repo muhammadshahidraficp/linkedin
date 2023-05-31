@@ -88,7 +88,7 @@ const FeedPostSection: React.FC = () => {
           <div className="p-8" style={{ minWidth: 600, minHeight: 300 }}>Create a {open}</div>
         </Dialog> : null
       }
-      <div className="py-4 pr-10 pl-10 bg-white mb-10 rounded-lg">
+      <div className="py-4 pr-10 pl-10 bg-white mb-4 rounded-lg">
         <div className=" flex justify-center pb-4 items-center gap-2">
           <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" sx={{ width: 50, height: 50 }} />
           <div className="w-full items-center h-12 rounded-full px-3 font-bold text-sm focus-within:border-red-500 border flex text-gray-400 cursor-pointer" onClick={() => setOpen("post")}>Start a post</div>
@@ -100,7 +100,7 @@ const FeedPostSection: React.FC = () => {
           <AtomicInputOption IconComponent={CalendarViewDay} title="Write article" color="#7FC15E" onClick={() => setOpen("article")} />
         </div>
       </div>
-      <Divider sx={{ mb: 4 }} />
+      <Divider sx={{ mb: 2 }} />
       {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}
