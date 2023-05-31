@@ -24,7 +24,7 @@ export const posts: PostData[] = [
     avatar: "https://i.pravatar.cc/300",
     name: "Cybersquare",
     description: "Trainer",
-    message: "Lorem ipsum",
+    message: "Visit our website today to learn more and sign up for a free trial",
     type: 'video',
     sourceUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     thumbUrl: ""
@@ -43,7 +43,7 @@ export const posts: PostData[] = [
     avatar: "https://i.pravatar.cc/150?img=2",
     name: "Cybersquare",
     description: "baabte",
-    message: "Lorem ipsum",
+    message: "With XYZ Solution, you can streamline workflows, enhance productivity, and drive growth like never before. Our advanced features include real-time collaboration, automated task management, and powerful analytics. 💼",
     type: 'text',
     sourceUrl: '',
     thumbUrl: ""
@@ -52,13 +52,13 @@ export const posts: PostData[] = [
     avatar: "",
     name: "Cybersquare",
     description: "baabte",
-    message: "Lorem ipsum",
+    message: "Excited to announce the launch of our new product! 🎉",
     type: 'video',
     sourceUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     thumbUrl: ""
   },
   {
-    avatar: "",
+    avatar: "https://i.pravatar.cc/150?img=4",
     name: "Cybersquare",
     description: "baabte",
     message: "Lorem ipsum",
@@ -68,7 +68,7 @@ export const posts: PostData[] = [
     imageUrl: "https://placehold.co/600x400"
   },
   {
-    avatar: "",
+    avatar: "https://i.pravatar.cc/150?img=6",
     name: "Cybersquare",
     description: "baabte",
     message: "Lorem ipsum",
