@@ -11,7 +11,7 @@ const ProfileSideBar: React.FC = () => {
 
     return (
         <div>
-            <div className='bg-white flex-1 py-2 mt-10 ml-10 rounded-md mr-10'>
+            <div className='bg-white flex-1 py-2 mt-5 ml-10 rounded-md mr-10'>
                 <div className="flex items-center justify-between pl-2 pr-10 mt-2 mb-2">
                     <h3>Linkedin news</h3>
                     <Info />

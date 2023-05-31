@@ -82,7 +82,7 @@ const FeedPostSection: React.FC = () => {
   const [open, setOpen] = useState("");
 
   return (
-    <div className="flex-2 mt-10 ml-10">
+    <div className="flex-2 mt-5 ml-10">
       {
         !!open ? <Dialog open={!!open} onClose={() => setOpen("")} sx={{ top: "0xp !important", bottom: "auto", borderRadius: 30 }} maxWidth="lg">
           <div className="p-8" style={{ minWidth: 600, minHeight: 300 }}>Create a {open}</div>
