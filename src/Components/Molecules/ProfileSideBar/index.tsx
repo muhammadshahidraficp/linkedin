@@ -16,7 +16,7 @@ const ProfileSideBar: React.FC = () => {
         { name: "Events" }, { name: "Programming languages" }, { name: "Groups" }, { name: "Job" }, { name: "BlockChain" }, { name: "Web3" }];
 
 
-    return (<div className="flex sticky top-70 flex-1 h-fit-content mt-5 flex-col ml-10">
+    return (<div className="flex flex-1 h-fit-content mt-5 flex-col ml-10">
         <div className="flex flex-col rounded-tl-2xl rounded-tr-2xl  items-center bg-white">
             <img src={Banner} alt="sidebar banner" className="rounded-tl-2xl rounded-tr-2xl" />
             <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
@@ -28,7 +28,7 @@ const ProfileSideBar: React.FC = () => {
             <AtomicSideBarStat text="Who has viewed your profile" value="121" />
             <AtomicSideBarStat text="Impressions of your post" value="33" />
         </div>
-        <div className={`${styles.sidebar__bottom} sticky top-0`}>
+        <div className={`${styles.sidebar__bottom} lg:sticky top-20`}>
             <p>Recent</p>
             {
                 recentItems.map((item, index) => {

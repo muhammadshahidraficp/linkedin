@@ -41,9 +41,11 @@ const MoleculePeopleYouKnow: React.FC = () => {
                         // }
                     }} />
                     </div>
+                    <div className="w-full px-4 text-center">
                     <h2 className="font-bold">{option.name}</h2>
-                    <span className="text-sm text-gray-600">{option.subtitle}</span>
-                    <div className="inline-block border border-blue-500 text-blue-500 py-2 px-4 rounded-full font-bold cursor-pointer transition-colors duration-300 hover:bg-blue-200 hover:border-4 hover:border-blue-500 ">Connect</div>
+                    <span className="text-sm text-gray-600 pb-4">{option.subtitle}</span>
+                    <div className="inline-block border border-blue-500 text-blue-500 py-1 mt-2 px-4 w-full text-center rounded-full font-bold cursor-pointer transition-colors duration-300 hover:bg-blue-200 hover:border-4 hover:border-blue-500 ">Connect</div>
+                    </div>
                 </div>
             ))}
             </div>
