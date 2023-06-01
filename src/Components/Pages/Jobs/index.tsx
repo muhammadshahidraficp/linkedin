@@ -3,6 +3,7 @@ import FeedPostSection from '../../Organisms/FeedPostSection';
 import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import MoleculeSidebarJob from '../../Molecules/MoleculeSidebarJob';
 
 const Jobs: React.FC = () => {
 
@@ -23,13 +24,13 @@ const Jobs: React.FC = () => {
             </HelmetProvider>
             {isLoading ? (
                 <div className="loader"></div>
-            ) : ((<div className='bg-gray-100'>
+            ) : ((<div className='bg-gray-100 min-h-screen'>
                 <div className='grid grid-cols-4 gap-2 m-auto' style={{ maxWidth: "1500px" }}>
-                    {/* <ProfileSideBar key="profile-side-bar" />
+                    <MoleculeSidebarJob key="profile-side-bar" />
                     <div className='col-span-2'>
                         Jobs
                     </div>
-                    <Widget /> */}
+                    <Widget />
                 </div> </div>))}
         </div>
     );

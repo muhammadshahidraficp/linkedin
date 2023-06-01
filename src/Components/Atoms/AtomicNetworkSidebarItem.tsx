@@ -8,22 +8,24 @@ interface AtomicNetworkSidebarItemProps {
     Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
         muiName: string;
     };
+    styleClass?:string;
 }
 
 const AtomicNetworkSidebarItem: React.FC<AtomicNetworkSidebarItemProps> = ({
     title,
     Icon,
-    value
+    value,
+    styleClass = "text-gray-600"
 }): ReactElement => {
     return (
-        <div className="flex ml-5 mt-2 justify-between mb-2" >
+        <div className={`flex ml-5 mt-2 justify-between mb-2 ${styleClass}`} >
             <div className="flex">
-                <Icon />
-                <span className="text-sm text-gray-600 ml-3">
+                <Icon sx={{color:'gray'}}/>
+                <span className="text-sm ml-3">
                     {title}
                 </span>
             </div>
-            <span className="text-sm text-gray-600 mr-4">
+            <span className="text-sm mr-4">
                 {value}
             </span>
         </div>
