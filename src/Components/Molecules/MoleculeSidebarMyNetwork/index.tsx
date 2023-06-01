@@ -16,14 +16,14 @@ export interface MoleculeSibarMyNetworkProp {
 const MoleculeSibarMyNetwork: React.FC = () => {
 
     const listOption: MoleculeSibarMyNetworkProp[] = [
-        { title: 'Connections', icon: SupervisorAccount, value: 120 },
-        { title: 'Contacts', icon: SupervisorAccount, value: 120 },
-        { title: 'Following and followers', icon: SupervisorAccount, value: 120 },
-        { title: 'Groups', icon: SupervisorAccount, value: 120 },
-        { title: 'Events', icon: SupervisorAccount, value: 120 },
-        { title: 'Pages', icon: SupervisorAccount, value: 120 },
-        { title: 'Newsletters', icon: SupervisorAccount, value: 120 },
-        { title: 'Hashtags', icon: SupervisorAccount, value: 120 }
+        { title: 'Connections', icon: SupervisorAccount, value: 1172 },
+        { title: 'Contacts', icon: SupervisorAccount, value: 4286 },
+        { title: 'Following and followers', icon: SupervisorAccount, value: '' },
+        { title: 'Groups', icon: SupervisorAccount, value: 100 },
+        { title: 'Events', icon: SupervisorAccount, value: 8 },
+        { title: 'Pages', icon: SupervisorAccount, value: 645 },
+        { title: 'Newsletters', icon: SupervisorAccount, value: 17 },
+        { title: 'Hashtags', icon: SupervisorAccount, value: 384 }
     ];
 
 
