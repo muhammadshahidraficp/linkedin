@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         eef3f8: '#eef3f8',
+        ash: "#747474"
       },
       'object-contain-25': {
         objectFit: 'contain',

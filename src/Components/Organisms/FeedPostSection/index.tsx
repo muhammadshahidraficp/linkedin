@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import AtomicInputOption from "../../Atoms/AtomicInputOption";
 import Post from "../../Molecules/Post";
-
 import Image from '@mui/icons-material/Image';
 import Subscriptions from '@mui/icons-material/Subscriptions';
 import EventNote from '@mui/icons-material/EventNote';
 import CalendarViewDay from '@mui/icons-material/CalendarViewDay';
 import { Avatar, Dialog, Divider } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import { nameButtonStyle } from "../../../Utility/constants";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import PersonIcon from '@mui/icons-material/Person';
+import PublicIcon from '@mui/icons-material/Public';
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import ArticleIcon from '@mui/icons-material/Article';
 
 export interface PostData {
   avatar: string;
@@ -85,7 +92,27 @@ const FeedPostSection: React.FC = () => {
     <div className="flex-2 mt-5 ml-10">
       {
         !!open ? <Dialog open={!!open} onClose={() => setOpen("")} sx={{ top: "0xp !important", bottom: "auto", borderRadius: 30 }} maxWidth="lg">
-          <div className="p-8" style={{ minWidth: 600, minHeight: 300 }}>Create a {open}</div>
+          <div className="flex flex-col p-8" style={{ minWidth: 600, minHeight: 300 }}>
+            <div className="flex justify-between">
+              <span className="font-bold">Create a {open}</span>
+              <CloseIcon/>
+            </div>
+            <Divider sx={{mt: 2}}/>
+            <div className="flex gap-2 my-2 items-center">
+              <Avatar src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" sx={{width: 48, height: 48}} />
+              <div className={`w-full flex justify-center py-0.1 hover:bg-gray-100 border hover:border-3  border-ash rounded-2xl cursor-pointer`}><PersonIcon sx={{ color : "#747474"}}/> <span className="text-base text-ash font-semibold">Muhammad Shahid</span> <ArrowDropDownIcon sx={{ color : "#747474"}} /></div>
+              <div className={`w-full flex justify-center py-0.1 hover:bg-gray-100 border hover:border-3  border-ash rounded-2xl cursor-pointer`}><PublicIcon/><span className="text-base"> Anyone</span> <ArrowDropDownIcon /></div>
+            </div>
+            <div className="mb-3">
+            <textarea className="outline-none resize-none w-full h-24" placeholder="What do you want to talk about?"></textarea>
+            <InsertEmoticonIcon/>
+            </div>
+            <div className="mt-2 flex flex-row">
+              <Image/>
+              <VideoLibraryIcon/>
+              <ArticleIcon/>
+            </div>
+          </div>
         </Dialog> : null
       }
       <div className="py-4 pr-10 pl-10 bg-white mb-4 rounded-lg">
