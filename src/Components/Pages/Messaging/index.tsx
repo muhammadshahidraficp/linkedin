@@ -6,7 +6,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { Divider } from '@mui/material';
-import { Search } from '@mui/icons-material';
+import { Search, StarBorder, StarOutlined, StartOutlined, VideoCameraFront } from '@mui/icons-material';
 import TuneIcon from '@mui/icons-material/Tune';
 
 const Messaging: React.FC = () => {
@@ -24,7 +24,7 @@ const Messaging: React.FC = () => {
         <div className="loader-container">
             <HelmetProvider>
                 <Helmet>
-                    <title>Jobs | LinkedIn</title>
+                    <title>Messages | LinkedIn</title>
                 </Helmet>
             </HelmetProvider>
             {isLoading ? (
@@ -65,7 +65,19 @@ const Messaging: React.FC = () => {
                         </div>
                     </div>
                     <div className='col-span-2 h-50 w-25 bg-white rounded-2xl mt-5'>
-
+                            <div className='h-screen'>
+                                <div className='flex justify-between px-4 pt-2 pb-2 border-b border-gray-200 items-center'>
+                                    <div>
+                                        <span>Muhammed Shahid Rafi CP</span>
+                                        <div className='text-sm text-gray-400'>Software Engineer</div>
+                                    </div>
+                                    <div className='flex gap-4'>
+                                            <MoreHorizIcon />
+                                            <VideoCameraFront />
+                                            <StarBorder />
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     <Widget />
                 </div> </div>))}
