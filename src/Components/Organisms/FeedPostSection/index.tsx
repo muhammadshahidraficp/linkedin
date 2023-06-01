@@ -14,6 +14,9 @@ import PublicIcon from '@mui/icons-material/Public';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import ArticleIcon from '@mui/icons-material/Article';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 export interface PostData {
   avatar: string;
@@ -107,10 +110,19 @@ const FeedPostSection: React.FC = () => {
             <textarea className="outline-none resize-none w-full h-24" placeholder="What do you want to talk about?"></textarea>
             <InsertEmoticonIcon/>
             </div>
-            <div className="mt-2 flex flex-row">
-              <Image/>
-              <VideoLibraryIcon/>
-              <ArticleIcon/>
+            <div className="flex justify-between">
+              <div className="mt-2 flex flex-row gap-2">
+                <Image sx={{color:'gray'}}/>
+                <VideoLibraryIcon sx={{color:'gray'}}/>
+                <ArticleIcon sx={{color:'gray'}}/>
+                <MoreHorizIcon sx={{color:'gray'}}/>
+                <Divider orientation="vertical" sx={{ width: '5px' }}/>
+                <div className={`w-24 flex justify-center items-center py-0.1 hover:bg-gray-100 hover:border-3  border-ash rounded-2xl cursor-pointer`}><ChatBubbleOutlineIcon sx={{ color : "#747474", height:15, width:15}}/> <span className="ml-1 text-sm text-ash font-semibold">Anyone</span></div>
+              </div>
+              <div className="flex items-center gap-4">
+                <AccessTimeIcon/>
+                <div className={`w-20 h-8 flex justify-center items-center py-0.1 hover:bg-gray-100 hover:border-3  bg-gray-100 rounded-2xl cursor-pointer`}><span className="ml-1 text-xs text-ash font-semibold">Post</span></div>
+              </div>
             </div>
           </div>
         </Dialog> : null
