@@ -24,7 +24,7 @@ const Notifications: React.FC = () => {
             name:'Chetan Nanda',
             title:' liked your post',
             subTitle:'Have you ever wondered how #blockchain technology works? 🤔',
-            reactionCount:4,
+            reactionCount:44,
             time:"8 hours ago",
             avatar:'1'
         },
@@ -32,23 +32,23 @@ const Notifications: React.FC = () => {
             name:'Ravui',
             title:'Chetan Nanda liked your post',
             subTitle:'Have you ever wondered how #blockchain technology works? 🤔',
-            reactionCount:4,
-            time:"8 hours ago",
+            reactionCount:1,
+            time:"5 hours ago",
             avatar:'2'
         },
         {
             name:'Muhammad',
             title:'Chetan Nanda liked your post',
             subTitle:'Have you ever wondered how #blockchain technology works? 🤔',
-            reactionCount:4,
-            time:"8 hours ago",
+            reactionCount:9,
+            time:"8 day ago",
             avatar:'3'
         },
         {   name:'bilal',
             title:'Chetan Nanda liked your post',
             subTitle:'Have you ever wondered how #blockchain technology works? 🤔',
-            reactionCount:4,
-            time:"8 hours ago",
+            reactionCount:45,
+            time:"1 week ago",
             avatar:'4'
         }
     ];
@@ -92,7 +92,7 @@ const Notifications: React.FC = () => {
                                             <div className="flex flex-row gap-2">
                                                 <span className="font-bold block hover:bg-gray-200">{notification.name}</span> <span>{notification.title}</span>
                                             </div>
-                                            <div className="text-xs hover:bg-gray-200 border p-4">{notification.subTitle}</div>
+                                            <div className="text-xs hover:bg-gray-200 border p-6">{notification.subTitle}</div>
                                             <div className="text-xs hover:bg-gray-200">{notification.reactionCount} Reactions</div>
                                         </div>
                                     </div>
