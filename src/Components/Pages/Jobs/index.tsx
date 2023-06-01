@@ -4,6 +4,8 @@ import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import MoleculeSidebarJob from '../../Molecules/MoleculeSidebarJob';
+import { buttonStyle } from '../../../Utility/constants';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 
 const Jobs: React.FC = () => {
 
@@ -26,7 +28,13 @@ const Jobs: React.FC = () => {
                 <div className="loader"></div>
             ) : ((<div className='bg-gray-100 min-h-screen'>
                 <div className='grid grid-cols-4 gap-2 m-auto' style={{ maxWidth: "1500px" }}>
-                    <MoleculeSidebarJob key="profile-side-bar" />
+                    <div className='ml-10'>
+                        <MoleculeSidebarJob key="profile-side-bar" />
+                        <div className={`${buttonStyle} py-3 flex items-center justify-center`}>
+                            <EditNoteIcon/>
+                            Post a free job
+                        </div>
+                    </div>
                     <div className='col-span-2'>
                         Jobs
                     </div>
