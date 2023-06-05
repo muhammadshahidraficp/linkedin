@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import FeedPostSection from '../../Organisms/FeedPostSection';
-import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { Divider } from '@mui/material';
-import { Search, StarBorder, StarOutlined, StartOutlined, VideoCameraFront } from '@mui/icons-material';
+import { Search, StarBorder, VideoCameraFront } from '@mui/icons-material';
 import TuneIcon from '@mui/icons-material/Tune';
 
 const Messaging: React.FC = () => {

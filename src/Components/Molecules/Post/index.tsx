@@ -18,7 +18,7 @@ function Post({ post }: { post: PostData }) {
       <div className={styles.post__body}>
         {post.message}
         <div className="py-4">
-          {!!post.imageUrl ? <img src={post.imageUrl} className="w-full" /> : post.sourceUrl ? <div>
+          {!!post.imageUrl ? <img src={post.imageUrl} className="w-full" alt={`post-${post.imageUrl}`}/> : post.sourceUrl ? <div>
             <video width="100%" controls>
               <source src={post.sourceUrl} type="video/mp4" />
               Your browser does not support the video tag.

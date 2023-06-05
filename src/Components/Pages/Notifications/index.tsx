@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import FeedPostSection from '../../Organisms/FeedPostSection';
-import ProfileSideBar from '../../Molecules/ProfileSideBar';
 import Widget from "../../Molecules/Widget";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Avatar } from '@mui/material';
@@ -78,9 +76,9 @@ const Notifications: React.FC = () => {
                         <div className='mt-5'>
                             <div className='rounded-2xl bg-white h-20 w-50 mt-5 flex flex-row justify-start'>
                                 <div className='flex justify-center h-20 items-center gap-3 ml-5'>
-                                    <div onClick={()=>{setselectedButton("All")}} className={`border font-bold  pl-2 rounded-2xl py-3 px-4 ${selectedButton=='All'?'bg-green-500 text-white':null}`} ><span className='text-center'>All</span></div>
-                                    <div onClick={()=>{setselectedButton("myPost")}} className={`border font-bold pl-2 rounded-2xl py-3 px-4 ${selectedButton=='myPost'?'bg-green-500 text-white':null}`} ><span className='text-center'>My Posts</span></div>
-                                    <div onClick={()=>{setselectedButton("mentions")}} className={`border font-bold pl-2 rounded-2xl py-3 px-4  ${selectedButton=='mentions'?'bg-green-500 text-white':null}`} ><span className='text-center'>Mentions</span></div>
+                                    <div onClick={()=>{setselectedButton("All")}} className={`border font-bold  pl-2 rounded-2xl py-3 px-4 ${selectedButton==='All'?'bg-green-500 text-white':null}`} ><span className='text-center'>All</span></div>
+                                    <div onClick={()=>{setselectedButton("myPost")}} className={`border font-bold pl-2 rounded-2xl py-3 px-4 ${selectedButton==='myPost'?'bg-green-500 text-white':null}`} ><span className='text-center'>My Posts</span></div>
+                                    <div onClick={()=>{setselectedButton("mentions")}} className={`border font-bold pl-2 rounded-2xl py-3 px-4  ${selectedButton==='mentions'?'bg-green-500 text-white':null}`} ><span className='text-center'>Mentions</span></div>
                                 </div>
                             </div>
                             <div className='rounded-2xl bg-white h-full w-50 mt-5 flex flex-col '>

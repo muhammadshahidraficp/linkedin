@@ -67,7 +67,7 @@ export default function Profile() {
                 </div>
                 <Divider sx={{mt: 2}}/>
                 <div className="px-4 py-1">
-                     <a onClick={()=>{getAuth().signOut()}} className="block py-1 text-gray-400 hover:bg-gray-200">Signout</a>
+                     <a href="/" onClick={()=>{getAuth().signOut()}} className="block py-1 text-gray-400 hover:bg-gray-200">Signout</a>
                 </div>
             </div>
         )}

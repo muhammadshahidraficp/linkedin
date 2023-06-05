@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react";
 
-import styles from "./InputOptions.module.css";
-
 interface InputOptionsProps {
   IconComponent: any;
   title: string;

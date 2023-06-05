@@ -7,7 +7,6 @@ import EventNote from '@mui/icons-material/EventNote';
 import CalendarViewDay from '@mui/icons-material/CalendarViewDay';
 import { Avatar, Dialog, Divider } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import { nameButtonStyle } from "../../../Utility/constants";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import PersonIcon from '@mui/icons-material/Person';
 import PublicIcon from '@mui/icons-material/Public';

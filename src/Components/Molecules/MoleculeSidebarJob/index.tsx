@@ -3,7 +3,6 @@ import SupervisorAccount from '@mui/icons-material/SupervisorAccount';
 import AtomicNetworkSidebarItem from '../../Atoms/AtomicNetworkSidebarItem';
 import { SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { useState } from 'react';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import CheckIcon from '@mui/icons-material/Check';
@@ -20,7 +19,6 @@ export interface MoleculeSidebarJobProp {
 
 
 const MoleculeSidebarJob: React.FC = () => {
-    const [showMore, setShowMore] = useState(true);
 
     const listOption: MoleculeSidebarJobProp[] = [
         { title: 'My jobs', icon: TurnedInIcon, value: '' },

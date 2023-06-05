@@ -13,31 +13,35 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { useNavigate } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import * as yup from "yup";
+import { useForm } from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup';
+
+interface AuthFormType {
+    email:string,
+    password:string
+}
+
+export const authFormSchema = yup.object().shape({
+    email:yup.string().email("Please enter valid email").required('required'),
+    password:yup.string().min(6,"password min 6 length").required('required')
+});
+
 
 const Login: React.FC = () => {
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const loading = useSelector((state: RootState) => state.auth.loading);
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value);
-    };
-
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
-    };
+    const {register,handleSubmit, formState:{ errors }} =useForm<AuthFormType>({
+        resolver:yupResolver(authFormSchema)
+    });
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
-    };
-
-    const handleLogin = (event: React.FormEvent) => {
-        event.preventDefault();
-        dispatch(login(email, password) as any);
     };
 
     useEffect(() => {
@@ -50,7 +54,9 @@ const Login: React.FC = () => {
         return () => unsubscribe();
       });
 
-
+    const handleFormSubmit = (data:AuthFormType)=>{
+        dispatch(login(data.email, data.password) as any);
+    }
 
     return (
         <div className={styles.login}>
@@ -60,7 +66,7 @@ const Login: React.FC = () => {
                 </Helmet>
             </HelmetProvider>
             <div className={styles.login__content}>
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleSubmit(handleFormSubmit)}>
                     <img src={HeaderLogo} alt="header logo" className={`${styles.login_header_logo} h-24 w-24`} />
                     <div className={styles.login__center_content}>
                         <div className={styles.login__box_content}>
@@ -76,8 +82,10 @@ const Login: React.FC = () => {
                                     marginBottom: "25px",
                                     marginTop: "30px"
                                 }}
-                                value={email} onChange={handleEmailChange}
                                 autoComplete="username"
+                                 {...register("email")}
+                                 error={!!errors?.email}
+                                 helperText={errors?.email?.message || ""}
                             />
                             <TextField className={styles.login__input}
                                 fullWidth
@@ -87,8 +95,11 @@ const Login: React.FC = () => {
                                     endAdornment: <InputAdornment position="end">
                                         <span className={styles.input__password_show} onClick={handleShowPassword}> {showPassword ? 'hide' : 'show'}</span>
                                     </InputAdornment>
-                                }} value={password} onChange={handlePasswordChange}
+                                }} 
                                 autoComplete="current-password"
+                                {...register("password")}
+                                error={!!errors?.password}
+                                helperText={errors?.password?.message || ""}
                             />
 
                             <p className={styles.login__forgot_password}>Forgot password?</p>

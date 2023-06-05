@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import FeedPostSection from '../../Organisms/FeedPostSection';
-import ProfileSideBar from '../../Molecules/ProfileSideBar';
-import Widget from "../../Molecules/Widget";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import MoleculeSibarMyNetwork from '../../Molecules/MoleculeSidebarMyNetwork';
 import MoleculePendingInvitation from '../../Molecules/MoleculePendingInvitation';
